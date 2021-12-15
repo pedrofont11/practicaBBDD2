@@ -12,4 +12,24 @@ function addContracte($nomUsuari,$dataAlta,$idTipusContracte){
     dbClose($connexio);
 }    
 
+function getContracte($nomUsuari){
+    $connexio = dbConnect();  
+    //volem rebre les dades del contracte
+    $query = "select * from contracte where nomUsuari = $nomUsuari";
+    //Substituim els valor per les variables, la paraula default es per l'idContracte, el qual s'autoincrementarà tot sol.
+    mysqli_query($connexio, $query);
+    dbClose($connexio);
+}   
+
+function estaActiu($dataAlta,$idTipusContracte){
+    $connexio = dbConnect();
+    if($idTipusContracte == "mensual"){
+
+    }else{
+        
+
+    }
+
+}
+
 ?>
