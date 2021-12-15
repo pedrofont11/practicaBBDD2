@@ -28,7 +28,7 @@
                                         ?>
                                         <div>
                                         <input type="radio" name="tipus" id="<?php echo $tipusContracte[$i]->get_tipusContracte() ?>" 
-                                        value="<?php echo $tipusContracte[$i]->get_idTipusContracte() ?>" required>
+                                        value="<?php echo $i ?>" required>
                                         <label for="<?php echo $tipusContracte[$i]->get_tipusContracte() ?>"><?php 
                                         echo $tipusContracte[$i]->get_tipusContracte()." ".$tipusContracte[$i]->get_preu()."€"?></label>
                                         </div>
@@ -42,7 +42,9 @@
                         <?php
                         require "./serveis/contracte.php";
                         if(isset($_POST['nomUsuari'])){
-                            addContracte($_POST['nomUsuari'],date('Y-m-d'),$_POST['tipus']);
+                            $tipus = $tipusContracte[$_POST['tipus']]->get_idTipusContracte();
+                            $import = $tipusContracte[$_POST['tipus']]->get_preu();
+                            addContracte($_POST['nomUsuari'],date('Y-m-d'), $tipus, $import);
                             }
                         ?>
                     </div>

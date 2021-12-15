@@ -22,7 +22,7 @@
                 height: 40px;
                 font-size: 16px;
                 font-family: Avenir, sans-serif;
- font-weight: 400;
+                font-weight: 400;
             }
 
             .option:hover{
@@ -34,7 +34,7 @@
     <div class="main">
     <div class="container">
         <?php
-         $nomUsuari = $_GET['nomUsuari'];  
+         $nomUsuari = $_GET['nomUsuari'];
          ?>
         <h1><?php echo $nomUsuari?></h1>
         <form method="post">
