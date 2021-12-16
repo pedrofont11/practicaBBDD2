@@ -50,13 +50,13 @@
             header("Location: ../FormulariContracte.php");
         }
         if(isset($_POST['button2'])){
-            header("Location: ../InsereixUsuaris.php");
+            header("Location: factura.php");
         }
         if(isset($_POST['button3'])){
             header("Location: home.php?nomUsuari=".$_POST['usuari']);
         }
         ?>
     </div>
-</div>
+    </div>
     </body>
 </html>
