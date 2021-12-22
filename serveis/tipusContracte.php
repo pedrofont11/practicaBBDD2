@@ -1,7 +1,7 @@
 <?php
 //require perqué el servei depen de la classe
 include_once "db.php";
-require "./classes/tipusContracte.php";
+require_once "./classes/tipusContracte.php";
 
 function getTipusContracte(){
     $connexio = dbConnect();                       

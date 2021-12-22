@@ -50,7 +50,7 @@
             header("Location: ../FormulariContracte.php");
         }
         if(isset($_POST['button2'])){
-            header("Location: .php");
+            header("Location: categories.php");
         }
         ?>
     </div>

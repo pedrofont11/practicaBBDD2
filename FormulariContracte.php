@@ -86,7 +86,7 @@
                             ?>                    
                         </form>
                         <?php
-                        require "./serveis/contracte.php";
+                        require_once "./serveis/contracte.php";
                         if(isset($_POST['nomUsuari'])){
                             $tipus = $tipusContracte[$_POST['tipus']]->get_idTipusContracte();
                             $import = $tipusContracte[$_POST['tipus']]->get_preu();
