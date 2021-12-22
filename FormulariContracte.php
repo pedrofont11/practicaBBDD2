@@ -1,5 +1,48 @@
 <html>
     <head>
+        <style>
+            .row{
+            font-family: Avenir, sans-serif;
+            }
+            .h1{
+                font-size: 50px;
+            }
+            .container{
+            width: 80%;
+            max-width: 1024px;
+            margin: auto;
+            font-size: 30px;
+            
+            }
+            .pro-qty{
+                size: 500px;
+            }
+            .btn{
+            color: white;
+            background-color: gray;
+            border-color: #0062cc;
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            width: 150px;
+            }
+            .usuari{
+                height: 30px;
+                font-size: 16px;
+            }
+        </style>
     </head>
     <body>
     <section class="search-filter">
@@ -11,16 +54,15 @@
                             <div class="nomUsuari">
                                 <div class="single-quantity">
                                     <p>Usuari</p>
-                                    <div class="pro-qty"><input type="text" name="nomUsuari" placeholder="Introdueix el teu usuari" required></div>
+                                    <div class="pro-qty"><input type="text" class="usuari" name="nomUsuari" placeholder="Introdueix el teu usuari" required></div>
                                 </div>
                             </div>
                             <div class="datepicker">
                                 <p>Data d'inici del contracte</p>
-                                <input type="date" name="date1" class="datepicker-1" value="<?php echo date('Y-m-d'); ?>" disabled/> 
+                                <div class="fecha"><input type="date" name="date1" class="usuari" value="<?php echo date('Y-m-d'); ?>" disabled /> 
                             </div>
-                            <br> 
-                            Selecciona el tipus de contracte:
-                            <br>
+                            <div class="text">
+                                <p>Selecciona el tipus de contracte:</p> 
                                     <?php
                                     require "./serveis/tipusContracte.php";                     
                                     $tipusContracte = getTipusContracte();            
@@ -36,8 +78,12 @@
                                     }         
                                     ?>   
                             <br>
-                            <br>
-                            <input type="submit" name="button" class="button" value="Nou contracte"/>
+                            <button type="submit" name="nou" class="btn btn-primary mb-3">Nou Contracte</button>
+                            <?php
+                            if(isset($_POST['nou'])){
+                            header("Location: pagines/home.php");
+                            }
+                            ?>                    
                         </form>
                         <?php
                         require "./serveis/contracte.php";

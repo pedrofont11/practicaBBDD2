@@ -17,8 +17,8 @@
             border: 1px solid rgba(0,0,0,.125);
             border-radius: 10px;
             margin: 10px 0;
-            text-align: center;
-                width: 100%;
+            text-align: left;
+                width: 30%;
                 height: 40px;
                 font-size: 16px;
                 font-family: Avenir, sans-serif;
@@ -33,30 +33,27 @@
     <body>
     <div class="main">
     <div class="container">
+    <form method="post">
         <?php
-         $nomUsuari = $_GET['nomUsuari'];
-         ?>
-        <h1><?php echo $nomUsuari?></h1>
-        <form method="post">
+        session_start();
+        $nomUsuari = $_SESSION['usuari'];   
+        ?>
+        <h1>Menu principal de <?php echo $nomUsuari?></h1>
             <input type="submit" name="button1"
-                   class="option" value="Nou contract" />
+                   class="option" value="Contractar un plan" />
+                   <br>
             <input type="submit" name="button2"
-                   class="option" value="Veure contracte" />
-            <input type="submit" name="button2"
-                   class="option" value="Veure factura" />
+                   class="option" value="Afegir categories favorites" />                 
         </form>
         <?php
         if(isset($_POST['button1'])){
             header("Location: ../FormulariContracte.php");
         }
         if(isset($_POST['button2'])){
-            header("Location: ../InsereixUsuaris.php");
-        }
-        if(isset($_POST['button3'])){
-            header("Location: home.php?nomUsuari=".$_POST['usuari']);
+            header("Location: .php");
         }
         ?>
     </div>
-</div>
+    </div>
     </body>
 </html>
